@@ -1,4 +1,9 @@
 {
+    "autoload": {
+        "psr-4": {
+            "Faculdade": "src/"
+        }
+    },
     "require": {
         "doctrine/orm": "^2.6"
     }
