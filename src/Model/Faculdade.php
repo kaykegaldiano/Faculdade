@@ -1,9 +1,15 @@
 <?php
 
+namespace Faculdade\Model;
+
+use Faculdade\Model\Curso;
+use Faculdade\Model\Usuario;
+
 class Faculdade
 {
     private string $nome;
-    private string $curso;
+    private Curso $curso;
+    private Usuario $usuario;
     
     public function getNome(): string
     {
@@ -15,7 +21,7 @@ class Faculdade
         $this->nome = $nome;
     }
 
-    public function getCurso(): string
+    public function getCurso(): Curso
     {
         return $this->curso;
     }
@@ -23,5 +29,10 @@ class Faculdade
     public function setCurso($curso)
     {
         $this->curso = $curso;
+    }
+
+    public function getUsuario(): Usuario
+    {
+        return $this->usuario;
     }
 }
