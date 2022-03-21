@@ -2,6 +2,9 @@
 
 namespace Faculdade\Model;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
+
 /**
  * @Entity
  * @Table(name="cursos")
@@ -22,6 +25,15 @@ class Curso
      * @Column(type="string")
      */
     private string $descricao;
+    /**
+     * @OneToMany(targetEntity="Aluno", mappedBy="curso")
+     */
+    private $alunos;
+
+    public function __construct()
+    {
+        $this->alunos = new ArrayCollection();
+    }
 
     public function getId(): int
     {
@@ -48,5 +60,17 @@ class Curso
     {
         $this->descricao = $descricao;
         return $this;
+    }
+
+    public function addAluno(Aluno $aluno): self
+    {
+        $this->alunos->add($aluno);
+        $aluno->setCurso($this);
+        return $this;
+    }
+
+    public function getAlunos(): Collection
+    {
+        return $this->alunos;
     }
 }
