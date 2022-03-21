@@ -33,9 +33,10 @@ class Curso
         return $this->nome;
     }
 
-    public function setNome($nome)
+    public function setNome(string $nome): self
     {
         $this->nome = $nome;
+        return $this;
     }
 
     public function getDescricao(): string
@@ -43,8 +44,9 @@ class Curso
         return $this->descricao;
     }
 
-    public function setDescricao($descricao)
+    public function setDescricao(string $descricao): self
     {
         $this->descricao = $descricao;
+        return $this;
     }
 }
