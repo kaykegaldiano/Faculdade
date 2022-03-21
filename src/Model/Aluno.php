@@ -34,6 +34,11 @@ class Aluno
      * @OneToMany(targetEntity="Telefone", mappedBy="aluno", cascade={"remove", "persist"})
      */
     private $telefones;
+    /**
+     * @Column(type="string")
+     * @ManyToOne(targetEntity="Curso", inversedBy="alunos")
+     */
+    private $curso;
 
     public function __construct()
     {
@@ -72,7 +77,7 @@ class Aluno
         return password_verify($senhaPura, $this->senha);
     }
 
-    public function addTelefone(Telefone $telefone)
+    public function addTelefone(Telefone $telefone): self
     {
         $this->telefones->add($telefone);
         $telefone->setAluno($this);
@@ -82,5 +87,16 @@ class Aluno
     public function getTelefones(): Collection
     {
         return $this->telefones;
+    }
+
+    public function getCurso(): Curso
+    {
+        return $this->curso;
+    }
+
+    public function setCurso(Curso $curso): self
+    {
+        $this->curso = $curso;
+        return $this;
     }
 }
