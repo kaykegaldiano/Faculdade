@@ -3,14 +3,14 @@
 namespace Faculdade\Model;
 
 use Faculdade\Model\Curso;
-use Faculdade\Model\Usuario;
+use Faculdade\Model\Aluno;
 
 class Faculdade
 {
     private string $nome;
     private Curso $curso;
-    private Usuario $usuario;
-    
+    private Aluno $usuario;
+
     public function getNome(): string
     {
         return $this->nome;
@@ -31,7 +31,7 @@ class Faculdade
         $this->curso = $curso;
     }
 
-    public function getUsuario(): Usuario
+    public function getUsuario(): Aluno
     {
         return $this->usuario;
     }
