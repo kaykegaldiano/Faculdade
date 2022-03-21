@@ -17,6 +17,6 @@ foreach ($cursoList as $curso) {
     echo "ID Curso: {$curso->getId()}\nNome: {$curso->getNome()}\nDescrição: {$curso->getDescricao()}\n\n";
 }
 
-$ads = $cursoRepository->findOneBy(['id' => 1]);
+// $ads = $cursoRepository->findOneBy(['id' => 1]);
 
-echo $ads->getNome();
+// echo $ads->getNome();
