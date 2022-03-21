@@ -8,9 +8,13 @@ use Doctrine\ORM\Tools\Setup;
 
 class EntityManagerCreator
 {
+    /**
+     * @return EntityManagerInterface
+     * @throws \Doctrine\ORM\ORMException
+     */
     public function getEntityManager(): EntityManagerInterface
     {
-        $paths = [__DIR__ . '/../Models'];
+        $paths = [__DIR__ . '/../Model'];
         $isDevMode = false;
 
         $dbParams = [
