@@ -6,8 +6,8 @@ use Faculdade\Model\Curso;
 require_once __DIR__ . '/../vendor/autoload.php';
 
 $curso = new Curso();
-$curso->setNome('Análise e Desenvolvimento de Sistemas');
-$curso->setDescricao('Curso de ADS');
+$curso->setNome($argv[1]);
+$curso->setDescricao($argv[1]);
 
 $entityManagerFactory = new EntityManagerCreator();
 $entityManager = $entityManagerFactory->getEntityManager();
